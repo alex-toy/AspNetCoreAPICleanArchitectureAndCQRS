@@ -12,22 +12,20 @@ public class UserProfile
     {
     }
 
-    //// Factory method
-    //public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo)
-    //{
-    //    return new UserProfile
-    //    {
-    //        IdentityId = identityId,
-    //        BasicInfo = basicInfo,
-    //        DateCreated = DateTime.UtcNow,
-    //        LastModified = DateTime.UtcNow
-    //    };
-    //}
+    public static UserProfile CreateUserProfile(string identityId, BasicInfo basicInfo)
+    {
+        return new UserProfile
+        {
+            IdentityId = identityId,
+            BasicInfo = basicInfo,
+            DateCreated = DateTime.UtcNow,
+            LastModified = DateTime.UtcNow
+        };
+    }
 
-    ////public methods
-    //public void UpdateBasicInfo(BasicInfo newInfo)
-    //{
-    //    BasicInfo = newInfo;
-    //    LastModified = DateTime.UtcNow;
-    //}
+    public void UpdateBasicInfo(BasicInfo newInfo)
+    {
+        BasicInfo = newInfo;
+        LastModified = DateTime.UtcNow;
+    }
 }

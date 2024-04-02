@@ -8,11 +8,11 @@ namespace Social.API.Controllers.V1;
 [ApiController]
 public class PostController : Controller
 {
-    ////[MapToApiVersion("2.0")]
-    //[HttpGet]
-    //[Route("{id}")]
-    //public IActionResult GetById(int id)
-    //{
-    //    return Ok(new Post() { Id = id, Text = "hello world" });
-    //}
+    //[MapToApiVersion("2.0")]
+    [HttpGet]
+    [Route("{id}")]
+    public IActionResult GetById(int id)
+    {
+        return Ok(new Post() { Id = id, Text = "hello world" });
+    }
 }
