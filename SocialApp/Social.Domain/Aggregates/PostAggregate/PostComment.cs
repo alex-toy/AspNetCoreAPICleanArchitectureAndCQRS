@@ -1,4 +1,7 @@
-﻿namespace Social.Domain.Aggregates.PostAggregate;
+﻿using Social.Domain.Exceptions;
+using Social.Domain.Validators.PostValidators;
+
+namespace Social.Domain.Aggregates.PostAggregate;
 
 public class PostComment
 {
@@ -13,42 +16,33 @@ public class PostComment
     {
     }
 
-    ////Factories
-    ///// <summary>
-    ///// Creates a post comment
-    ///// </summary>
-    ///// <param name="postId">The ID of the post to which the comment belongs</param>
-    ///// <param name="text">Text content of the comment</param>
-    ///// <param name="userProfileId">The ID of the user who created the comment</param>
-    ///// <returns><see cref="PostComment"/></returns>
-    ///// <exception cref="PostCommentNotValidException">Thrown if the data provided for the post comment
-    ///// is not valid</exception>
-    //public static PostComment CreatePostComment(Guid postId, string text, Guid userProfileId)
-    //{
-    //    var validator = new PostCommentValidator();
-    //    var objectToValidate = new PostComment
-    //    {
-    //        PostId = postId,
-    //        Text = text,
-    //        UserProfileId = userProfileId,
-    //        DateCreated = DateTime.UtcNow,
-    //        LastModified = DateTime.UtcNow
-    //    };
+    public static PostComment CreatePostComment(Guid postId, string text, Guid userProfileId)
+    {
+        var validator = new PostCommentValidator();
+        var objectToValidate = new PostComment
+        {
+            PostId = postId,
+            Text = text,
+            UserProfileId = userProfileId,
+            DateCreated = DateTime.UtcNow,
+            LastModified = DateTime.UtcNow
+        };
 
-    //    var validationResult = validator.Validate(objectToValidate);
+        //var validationResult = validator.Validate(objectToValidate);
 
-    //    if (validationResult.IsValid) return objectToValidate;
+        //if (validationResult.IsValid) return objectToValidate;
 
-    //    var exception = new PostCommentNotValidException("Post comment is not valid");
+        //var exception = new PostCommentNotValidException("Post comment is not valid");
 
-    //    validationResult.Errors.ForEach(vr => exception.ValidationErrors.Add(vr.ErrorMessage));
-    //    throw exception;
-    //}
+        //validationResult.Errors.ForEach(vr => exception.ValidationErrors.Add(vr.ErrorMessage));
+        //throw exception;
 
-    ////public methods
-    //public void UpdateCommentText(string newText)
-    //{
-    //    Text = newText;
-    //    LastModified = DateTime.UtcNow;
-    //}
+        return objectToValidate;
+    }
+
+    public void UpdateCommentText(string newText)
+    {
+        Text = newText;
+        LastModified = DateTime.UtcNow;
+    }
 }

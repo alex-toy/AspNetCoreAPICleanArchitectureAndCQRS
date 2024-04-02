@@ -13,42 +13,30 @@ public class BasicInfo
     {
     }
 
-    ///// <summary>
-    ///// Creates a new BasicInfo instance
-    ///// </summary>
-    ///// <param name="firstName">First name</param>
-    ///// <param name="lastName">Last name</param>
-    ///// <param name="emailAddress">Emnail address</param>
-    ///// <param name="phone">Phone</param>
-    ///// <param name="dateOfBirth">Date of Birth</param>
-    ///// <param name="currentCity">Current city</param>
-    ///// <returns><see cref="BasicInfo"/></returns>
-    ///// <exception cref="UserProfileNotValidException"></exception>
-    //public static BasicInfo CreateBasicInfo(string firstName, string lastName, string emailAddress,
-    //    string phone, DateTime dateOfBirth, string currentCity)
-    //{
-    //    var validator = new BasicInfoValidator();
+    public static BasicInfo CreateBasicInfo(string firstName, string lastName, string emailAddress, string phone, DateTime dateOfBirth, string currentCity)
+    {
+        var validator = new BasicInfoValidator();
 
-    //    var objToValidate = new BasicInfo
-    //    {
-    //        FirstName = firstName,
-    //        LastName = lastName,
-    //        EmailAddress = emailAddress,
-    //        Phone = phone,
-    //        DateOfBirth = dateOfBirth,
-    //        CurrentCity = currentCity
-    //    };
+        var objToValidate = new BasicInfo
+        {
+            FirstName = firstName,
+            LastName = lastName,
+            EmailAddress = emailAddress,
+            Phone = phone,
+            DateOfBirth = dateOfBirth,
+            CurrentCity = currentCity
+        };
 
-    //    var validationResult = validator.Validate(objToValidate);
+        var validationResult = validator.Validate(objToValidate);
 
-    //    if (validationResult.IsValid) return objToValidate;
+        if (validationResult.IsValid) return objToValidate;
 
-    //    var exception = new UserProfileNotValidException("The user profile is not valid");
-    //    foreach (var error in validationResult.Errors)
-    //    {
-    //        exception.ValidationErrors.Add(error.ErrorMessage);
-    //    }
+        var exception = new UserProfileNotValidException("The user profile is not valid");
+        foreach (var error in validationResult.Errors)
+        {
+            exception.ValidationErrors.Add(error.ErrorMessage);
+        }
 
-    //    throw exception;
-    //}
+        throw exception;
+    }
 }

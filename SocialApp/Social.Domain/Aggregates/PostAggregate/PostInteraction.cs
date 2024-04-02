@@ -14,15 +14,14 @@ public class PostInteraction
     {
     }
 
-    ////Factories
-    //public static PostInteraction CreatePostInteraction(Guid postId, Guid userProfileId,
-    //    InteractionType type)
-    //{
-    //    return new PostInteraction
-    //    {
-    //        PostId = postId,
-    //        UserProfileId = userProfileId,
-    //        InteractionType = type
-    //    };
-    //}
+    //Factories
+    public static PostInteraction CreatePostInteraction(Guid postId, Guid userProfileId, InteractionType type)
+    {
+        return new PostInteraction
+        {
+            PostId = postId,
+            UserProfileId = userProfileId,
+            InteractionType = type
+        };
+    }
 }

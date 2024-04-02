@@ -1,8 +1,6 @@
-using Cwk.Domain.Aggregates.Friendships;
-using FluentValidation;
-using FluentValidation.Results;
+using Social.Domain.Aggregates.Friendships;
 
-namespace Cwk.Domain.Validators.FriendshipsValidators;
+namespace Social.Domain.Validators.FriendshipsValidators;
 
 public class FriendRequestValidator : AbstractValidator<FriendRequest>
 {

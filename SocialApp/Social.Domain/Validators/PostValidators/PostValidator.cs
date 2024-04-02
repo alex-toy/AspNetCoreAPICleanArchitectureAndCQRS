@@ -1,7 +1,6 @@
-﻿using FluentValidation;
-using Social.Domain.Aggregates.PostAggregate;
+﻿using Social.Domain.Aggregates.PostAggregate;
 
-namespace Cwk.Domain.Validators.PostValidators;
+namespace Social.Domain.Validators.PostValidators;
 
 public class PostValidator : AbstractValidator<Post>
 {

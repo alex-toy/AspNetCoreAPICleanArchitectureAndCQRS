@@ -1,8 +1,7 @@
-using Cwk.Domain.Aggregates.Friendships;
 using Cwk.Domain.Exceptions;
-using FluentValidation.Results;
+using Social.Domain.Aggregates.Friendships;
 
-namespace Cwk.Domain.Validators.FriendshipsValidators;
+namespace Social.Domain.Validators.FriendshipsValidators;
 
 public class FriendshipAggregateValidator
 {
@@ -16,12 +15,11 @@ public class FriendshipAggregateValidator
         var validator = new FriendRequestValidator();
         var validationResult = validator.Validate(friendRequest);
 
-        if (!validationResult.IsValid) 
+        if (!validationResult.IsValid)
             ThrowNotValidException<FriendRequestValidationException>(validationResult.Errors);
     }
 
-    private static void ThrowNotValidException<T>(List<ValidationFailure> errors) 
-        where T : DomainModelInvalidException
+    private static void ThrowNotValidException<T>(List<ValidationFailure> errors) where T : DomainModelInvalidException
     {
         var exception = new FriendRequestValidationException("Friend request is not  valid");
         errors

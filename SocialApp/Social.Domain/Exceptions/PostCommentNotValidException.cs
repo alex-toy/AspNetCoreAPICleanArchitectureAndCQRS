@@ -1,10 +1,10 @@
-﻿using System.Drawing;
+﻿using Cwk.Domain.Exceptions;
 
-namespace Cwk.Domain.Exceptions;
+namespace Social.Domain.Exceptions;
 
 public class PostCommentNotValidException : DomainModelInvalidException
 {
-    internal PostCommentNotValidException() {}
-    internal PostCommentNotValidException(string message) : base(message) {}
-    internal PostCommentNotValidException(string message, Exception inner) : base(message, inner) {}
+    internal PostCommentNotValidException() { }
+    internal PostCommentNotValidException(string message) : base(message) { }
+    internal PostCommentNotValidException(string message, Exception inner) : base(message, inner) { }
 }

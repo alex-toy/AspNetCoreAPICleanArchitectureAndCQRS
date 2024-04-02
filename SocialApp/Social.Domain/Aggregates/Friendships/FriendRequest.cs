@@ -1,13 +1,11 @@
-using Cwk.Domain.Exceptions;
-using Cwk.Domain.Validators.FriendshipsValidators;
-using Social.Domain.Aggregates.Friendships;
 using Social.Domain.Aggregates.UserProfileAggregate;
+using Social.Domain.Validators.FriendshipsValidators;
 
-namespace Cwk.Domain.Aggregates.Friendships;
+namespace Social.Domain.Aggregates.Friendships;
 
 public class FriendRequest
 {
-    private FriendRequest() {}
+    private FriendRequest() { }
     public Guid FriendRequestId { get; private set; }
     public Guid? RequesterUserProfileId { get; private set; }
     public UserProfile? Requester { get; private set; }
@@ -17,17 +15,7 @@ public class FriendRequest
     public DateTime DateResponded { get; private set; }
     public ResponseType Response { get; private set; }
 
-    /// <summary>
-    /// Create new instance of a friend request
-    /// </summary>
-    /// <param name="friendRequestId">The friend request identifier</param>
-    /// <param name="requesterId">User profile identifier of the requester</param>
-    /// <param name="receiverId">User profile identifier of the receiver</param>
-    /// <param name="dateSent">The date when the request was initiated</param>
-    /// <returns><see cref="FriendRequest"/></returns>
-    /// <exception cref="FriendRequestValidationException"></exception>
-    public static FriendRequest CreateFriendRequest(Guid friendRequestId, Guid requesterId, Guid receiverId,
-        DateTime dateSent)
+    public static FriendRequest CreateFriendRequest(Guid friendRequestId, Guid requesterId, Guid receiverId, DateTime dateSent)
     {
         var friendRequest = new FriendRequest();
         friendRequest.FriendRequestId = friendRequestId;
@@ -37,10 +25,10 @@ public class FriendRequest
         friendRequest.Response = ResponseType.Pending;
 
         FriendshipAggregateValidator.ValidateFriendRequest(friendRequest);
-        
+
         return friendRequest;
     }
-    
+
     #region Behavior
 
     public Friendship? AcceptFriendRequest(Guid friendshipId)
@@ -65,5 +53,4 @@ public class FriendRequest
         DateResponded = DateTime.UtcNow;
     }
     #endregion
-    
 }
