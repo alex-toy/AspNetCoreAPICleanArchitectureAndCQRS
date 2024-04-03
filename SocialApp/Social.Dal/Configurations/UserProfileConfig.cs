@@ -1,19 +1,13 @@
-﻿using Cwk.Domain.Aggregates.UserProfileAggregate;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Social.Domain.Aggregates.UserProfileAggregate;
 
-namespace CwkSocial.Dal.Configurations
+namespace Social.Dal.Configurations;
+
+internal class UserProfileConfig : IEntityTypeConfiguration<UserProfile>
 {
-    internal class UserProfileConfig : IEntityTypeConfiguration<UserProfile>
+    public void Configure(EntityTypeBuilder<UserProfile> builder)
     {
-        public void Configure(EntityTypeBuilder<UserProfile> builder)
-        {
-            builder.OwnsOne(up => up.BasicInfo);
-        }
+        builder.OwnsOne(up => up.BasicInfo);
     }
 }

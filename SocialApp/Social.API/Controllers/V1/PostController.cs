@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Social.Domain.Aggregates.PostAggregate;
 
 namespace Social.API.Controllers.V1;
 
@@ -13,6 +12,6 @@ public class PostController : Controller
     [Route("{id}")]
     public IActionResult GetById(int id)
     {
-        return Ok(new Post() { Id = id, Text = "hello world" });
+        return Ok();
     }
 }

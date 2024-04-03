@@ -1,28 +1,29 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Social.Dal;
 
-namespace CwkSocial.Api.Registrars
+namespace Social.API.Registrars;
+
+public class DbRegistrar : IWebApplicationBuilderRegistrar
 {
-    public class DbRegistrar : IWebApplicationBuilderRegistrar
+    public void RegisterServices(WebApplicationBuilder builder)
     {
-        public void RegisterServices(WebApplicationBuilder builder)
+        var cs = builder.Configuration.GetConnectionString("Default");
+        builder.Services.AddDbContext<DataContext>(options =>
         {
-            var cs = builder.Configuration.GetConnectionString("Default");
-            builder.Services.AddDbContext<DataContext>(options =>
+            options.UseSqlServer(cs);
+        });
+
+        builder.Services.AddIdentityCore<IdentityUser>(options =>
             {
-                options.UseSqlServer(cs);
-            });
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.ClaimsIdentity.UserIdClaimType = "IdentityId";
+            })
+            .AddEntityFrameworkStores<DataContext>();
 
-            builder.Services.AddIdentityCore<IdentityUser>(options =>
-                {
-                    options.Password.RequireDigit = false;
-                    options.Password.RequiredLength = 5;
-                    options.Password.RequireLowercase = false;
-                    options.Password.RequireUppercase = false;
-                    options.Password.RequireNonAlphanumeric = false;
-                    options.ClaimsIdentity.UserIdClaimType = "IdentityId";
-                })
-                .AddEntityFrameworkStores<DataContext>();
-
-        }
     }
 }

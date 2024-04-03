@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Social.Domain.Models;
 
 namespace Social.API.Controllers.V2;
 
@@ -12,6 +11,6 @@ public class PostController : Controller
     [Route("{id}")]
     public IActionResult GetById(int id)
     {
-        return Ok(new Post() { Id = id, Text = "hello universe" });
+        return Ok();
     }
 }
