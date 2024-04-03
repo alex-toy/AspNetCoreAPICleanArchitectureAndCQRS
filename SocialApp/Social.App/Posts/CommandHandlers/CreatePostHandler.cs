@@ -1,10 +1,9 @@
-﻿using Cwk.Domain.Aggregates.PostAggregate;
-using Cwk.Domain.Exceptions;
-using CwkSocial.Application.Enums;
+﻿using CwkSocial.Application.Enums;
 using CwkSocial.Application.Models;
 using CwkSocial.Application.Posts.Commands;
-using CwkSocial.Dal;
-using MediatR;
+using Social.Dal;
+using Social.Domain.Aggregates.PostAggregate;
+using Social.Domain.Exceptions;
 
 namespace CwkSocial.Application.Posts.CommandHandlers;
 

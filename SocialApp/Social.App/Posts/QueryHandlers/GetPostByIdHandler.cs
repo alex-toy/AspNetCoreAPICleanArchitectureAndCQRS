@@ -1,10 +1,9 @@
-﻿using Cwk.Domain.Aggregates.PostAggregate;
-using CwkSocial.Application.Enums;
+﻿using CwkSocial.Application.Enums;
 using CwkSocial.Application.Models;
 using CwkSocial.Application.Posts.Queries;
-using CwkSocial.Dal;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Social.Dal;
+using Social.Domain.Aggregates.PostAggregate;
 
 namespace CwkSocial.Application.Posts.QueryHandlers;
 

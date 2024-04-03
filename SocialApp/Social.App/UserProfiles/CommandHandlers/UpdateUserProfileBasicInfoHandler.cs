@@ -1,16 +1,10 @@
-﻿using Cwk.Domain.Aggregates.UserProfileAggregate;
-using CwkSocial.Application.UserProfiles.Commands;
-using CwkSocial.Dal;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Cwk.Domain.Exceptions;
+﻿using Cwk.Domain.Exceptions;
 using CwkSocial.Application.Enums;
 using CwkSocial.Application.Models;
+using CwkSocial.Application.UserProfiles.Commands;
+using Microsoft.EntityFrameworkCore;
+using Social.Dal;
+using Social.Domain.Aggregates.UserProfileAggregate;
 
 namespace CwkSocial.Application.UserProfiles.CommandHandlers
 {

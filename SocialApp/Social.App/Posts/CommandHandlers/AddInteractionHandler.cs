@@ -2,6 +2,7 @@
 using CwkSocial.Application.Models;
 using CwkSocial.Application.Posts;
 using CwkSocial.Application.Posts.Commands;
+using Social.Dal;
 using Social.Domain.Aggregates.PostAggregate;
 
 namespace Social.App.Posts.CommandHandlers;

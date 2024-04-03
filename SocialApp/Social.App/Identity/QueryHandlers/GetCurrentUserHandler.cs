@@ -1,17 +1,13 @@
-﻿using AutoMapper;
-using CwkSocial.Application.Enums;
-using CwkSocial.Application.Identity.Dtos;
+﻿using CwkSocial.Application.Identity.Dtos;
 using CwkSocial.Application.Identity.Queries;
 using CwkSocial.Application.Models;
-using CwkSocial.Dal;
-using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Social.Dal;
 
 namespace CwkSocial.Application.Identity.QueryHandlers;
 
-public class GetCurrentUserHandler 
-    : IRequestHandler<GetCurrentUser, OperationResult<IdentityUserProfileDto>>
+public class GetCurrentUserHandler : IRequestHandler<GetCurrentUser, OperationResult<IdentityUserProfileDto>>
 {
     private readonly DataContext _ctx;
     private readonly UserManager<IdentityUser> _userManager;

@@ -1,9 +1,7 @@
-using Cwk.Domain.Aggregates.Friendships;
 using Cwk.Domain.Exceptions;
 using CwkSocial.Application.Enums;
 using CwkSocial.Application.Models;
-using CwkSocial.Dal;
-using MediatR;
+using Social.Dal;
 
 namespace CwkSocial.Application.Friendships.Commands;
 
@@ -27,8 +25,7 @@ public class CreateFriendRequestHandler : IRequestHandler<CreateFriendRequest, O
     {
         try
         {
-            var friendRequest = FriendRequest
-                .CreateFriendRequest(Guid.NewGuid(), request.RequesterId, request.ReceiverId, DateTime.UtcNow);
+            var friendRequest = FriendRequest.CreateFriendRequest(Guid.NewGuid(), request.RequesterId, request.ReceiverId, DateTime.UtcNow);
             _ctx.FriendRequests.Add(friendRequest);
             await _ctx.SaveChangesAsync(cancellationToken);
         }

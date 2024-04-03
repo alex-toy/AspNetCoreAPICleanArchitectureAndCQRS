@@ -1,16 +1,13 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using AutoMapper;
-using Cwk.Domain.Aggregates.UserProfileAggregate;
-using CwkSocial.Application.Enums;
+﻿using CwkSocial.Application.Enums;
 using CwkSocial.Application.Identity.Commands;
 using CwkSocial.Application.Identity.Dtos;
 using CwkSocial.Application.Models;
 using CwkSocial.Application.Services;
-using CwkSocial.Dal;
-using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Social.Dal;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 namespace CwkSocial.Application.Identity.Handlers;
 
 public class LoginCommandHandler : IRequestHandler<LoginCommand, OperationResult<IdentityUserProfileDto>>

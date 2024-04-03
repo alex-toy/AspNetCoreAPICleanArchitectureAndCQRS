@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Social.Dal\Social.Dal.csproj" />
     <ProjectReference Include="..\Social.Domain\Social.Domain.csproj" />
   </ItemGroup>
 

@@ -2,10 +2,8 @@
 using CwkSocial.Application.Identity.Commands;
 using CwkSocial.Application.Models;
 using CwkSocial.Application.UserProfiles;
-using CwkSocial.Dal;
-using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Update;
+using Social.Dal;
 
 namespace CwkSocial.Application.Identity.Handlers;
 
