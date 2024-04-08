@@ -3,12 +3,12 @@
 namespace Social.API.Controllers.V1;
 
 [ApiVersion("1.0")]
-[Route("api/{version:apiVersion}/[controller]")]
+[Route(ApiRoutes.BaseRoute)]
 [ApiController]
 public class PostController : Controller
 {
     [HttpGet]
-    [Route("{id}")]
+    [Route(ApiRoutes.Posts.IdRoute)]
     public IActionResult GetById(int id)
     {
         return Ok();
