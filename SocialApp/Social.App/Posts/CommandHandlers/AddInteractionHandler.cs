@@ -1,7 +1,7 @@
-﻿using CwkSocial.Application.Enums;
-using CwkSocial.Application.Models;
-using CwkSocial.Application.Posts;
-using CwkSocial.Application.Posts.Commands;
+﻿using Social.Application.Enums;
+using Social.Application.Models;
+using Social.Application.Posts;
+using Social.Application.Posts.Commands;
 using Social.Dal;
 using Social.Domain.Aggregates.PostAggregate;
 

@@ -1,11 +1,11 @@
-﻿using CwkSocial.Application.Identity.Dtos;
-using CwkSocial.Application.Identity.Queries;
-using CwkSocial.Application.Models;
+﻿using Social.Application.Identity.Dtos;
+using Social.Application.Identity.Queries;
+using Social.Application.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 
-namespace CwkSocial.Application.Identity.QueryHandlers;
+namespace Social.Application.Identity.QueryHandlers;
 
 public class GetCurrentUserHandler : IRequestHandler<GetCurrentUser, OperationResult<IdentityUserProfileDto>>
 {

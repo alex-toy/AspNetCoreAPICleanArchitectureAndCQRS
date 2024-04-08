@@ -1,9 +1,9 @@
-using CwkSocial.Application.Enums;
-using CwkSocial.Application.Models;
+using Social.Application.Enums;
+using Social.Application.Models;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 
-namespace CwkSocial.Application.Friendships.Commands;
+namespace Social.Application.Friendships.Commands;
 
 public class AcceptFriendRequest : IRequest<OperationResult<Unit>>
 {

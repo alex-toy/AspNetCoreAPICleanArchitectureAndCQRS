@@ -1,9 +1,9 @@
-﻿using CwkSocial.Application.Models;
-using CwkSocial.Application.UserProfiles.Queries;
+﻿using Social.Application.Models;
+using Social.Application.UserProfiles.Queries;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 
-namespace CwkSocial.Application.UserProfiles.QueryHandlers
+namespace Social.Application.UserProfiles.QueryHandlers
 {
     internal class GetAllUserProfilesQueryHandler 
         : IRequestHandler<GetAllUserProfiles, OperationResult<IEnumerable<UserProfile>>>

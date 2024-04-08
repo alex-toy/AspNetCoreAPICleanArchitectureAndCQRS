@@ -1,4 +1,4 @@
-﻿namespace CwkSocial.Application.Options;
+﻿namespace Social.Application.Options;
 
 public class JwtSettings
 {

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cwk.Domain.Aggregates.UserProfileAggregate;
-using CwkSocial.Application.Models;
+using Social.Application.Models;
 
-namespace CwkSocial.Application.UserProfiles.Commands
+namespace Social.Application.UserProfiles.Commands
 {
     public class UpdateUserProfileBasicInfo : IRequest<OperationResult<UserProfile>>
     {

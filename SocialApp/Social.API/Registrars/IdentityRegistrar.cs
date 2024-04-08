@@ -1,7 +1,7 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
 
-namespace CwkSocial.Api.Registrars;
+namespace Social.Api.Registrars;
 
 public class IdentityRegistrar : IWebApplicationBuilderRegistrar
 {

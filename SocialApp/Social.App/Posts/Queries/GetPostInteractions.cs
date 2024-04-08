@@ -1,8 +1,8 @@
 ﻿using Cwk.Domain.Aggregates.PostAggregate;
-using CwkSocial.Application.Models;
+using Social.Application.Models;
 using MediatR;
 
-namespace CwkSocial.Application.Posts.Queries;
+namespace Social.Application.Posts.Queries;
 
 public class GetPostInteractions : IRequest<OperationResult<List<PostInteraction>>>
 {

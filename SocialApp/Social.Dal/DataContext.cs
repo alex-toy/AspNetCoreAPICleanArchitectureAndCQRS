@@ -17,6 +17,9 @@ public class DataContext : IdentityDbContext
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        builder.ApplyConfiguration(new IdentityUserLoginConfig());
+        builder.ApplyConfiguration(new IdentityUserRoleConfig());
+        builder.ApplyConfiguration(new IdentityUserTokenConfig());
         builder.ApplyConfiguration(new PostCommentConfig());
         builder.ApplyConfiguration(new PostInteractionConfig());
         builder.ApplyConfiguration(new UserProfileConfig());

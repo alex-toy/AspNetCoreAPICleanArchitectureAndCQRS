@@ -1,4 +1,4 @@
-﻿namespace CwkSocial.Application.Identity;
+﻿namespace Social.Application.Identity;
 
 public class IdentityErrorMessages
 {

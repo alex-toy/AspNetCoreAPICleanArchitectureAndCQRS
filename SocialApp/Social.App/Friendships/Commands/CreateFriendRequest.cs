@@ -1,9 +1,9 @@
 using Cwk.Domain.Exceptions;
-using CwkSocial.Application.Enums;
-using CwkSocial.Application.Models;
+using Social.Application.Enums;
+using Social.Application.Models;
 using Social.Dal;
 
-namespace CwkSocial.Application.Friendships.Commands;
+namespace Social.Application.Friendships.Commands;
 
 public class CreateFriendRequest : IRequest<OperationResult<Unit>>
 {

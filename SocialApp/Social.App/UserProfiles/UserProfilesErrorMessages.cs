@@ -1,4 +1,4 @@
-﻿namespace CwkSocial.Application.UserProfiles;
+﻿namespace Social.Application.UserProfiles;
 
 public class UserProfilesErrorMessages
 {

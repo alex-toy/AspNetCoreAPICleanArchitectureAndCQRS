@@ -1,9 +1,9 @@
 ﻿using Cwk.Domain.Exceptions;
-using CwkSocial.Application.Enums;
-using CwkSocial.Application.Identity.Commands;
-using CwkSocial.Application.Identity.Dtos;
-using CwkSocial.Application.Models;
-using CwkSocial.Application.Services;
+using Social.Application.Enums;
+using Social.Application.Identity.Commands;
+using Social.Application.Identity.Dtos;
+using Social.Application.Models;
+using Social.Application.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.IdentityModel.JsonWebTokens;
@@ -11,7 +11,7 @@ using Social.Dal;
 using Social.Domain.Aggregates.UserProfileAggregate;
 using System.Security.Claims;
 
-namespace CwkSocial.Application.Identity.Handlers;
+namespace Social.Application.Identity.Handlers;
 
 public class RegisterIdentityHandler : IRequestHandler<RegisterIdentity, OperationResult<IdentityUserProfileDto>>
 {

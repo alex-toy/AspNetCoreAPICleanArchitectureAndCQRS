@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
-namespace CwkSocial.Dal.Extensions;
+namespace Social.Dal.Extensions;
 
 internal static class ModelBuilderExtensions
 {

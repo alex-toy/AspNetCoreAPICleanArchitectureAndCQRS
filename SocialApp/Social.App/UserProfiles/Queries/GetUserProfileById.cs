@@ -1,9 +1,9 @@
 ﻿using Cwk.Domain.Aggregates.UserProfileAggregate;
-using CwkSocial.Application.Models;
-using CwkSocial.Application.UserProfiles.Models;
+using Social.Application.Models;
+using Social.Application.UserProfiles.Models;
 using MediatR;
 
-namespace CwkSocial.Application.UserProfiles.Queries
+namespace Social.Application.UserProfiles.Queries
 {
     public class GetUserProfileById : IRequest<OperationResult<UserProfileDto>>
     {

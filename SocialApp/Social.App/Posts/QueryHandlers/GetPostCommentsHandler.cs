@@ -1,10 +1,10 @@
-﻿using CwkSocial.Application.Models;
-using CwkSocial.Application.Posts.Queries;
+﻿using Social.Application.Models;
+using Social.Application.Posts.Queries;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using Social.Domain.Aggregates.PostAggregate;
 
-namespace CwkSocial.Application.Posts.QueryHandlers;
+namespace Social.Application.Posts.QueryHandlers;
 
 public class GetPostCommentsHandler : IRequestHandler<GetPostComments, OperationResult<List<PostComment>>>
 {

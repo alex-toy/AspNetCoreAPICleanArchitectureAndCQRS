@@ -1,7 +1,7 @@
-﻿using CwkSocial.Application.UserProfiles.Queries;
+﻿using Social.Application.UserProfiles.Queries;
 using Social.API.Registrars;
 
-namespace CwkSocial.Api.Registrars
+namespace Social.Api.Registrars
 {
     public class BogardRegistrar : IWebApplicationBuilderRegistrar
     {

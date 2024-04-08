@@ -1,13 +1,13 @@
 ﻿using Cwk.Domain.Aggregates.UserProfileAggregate;
-using CwkSocial.Application.UserProfiles.Queries;
-using CwkSocial.Dal;
+using Social.Application.UserProfiles.Queries;
+using Social.Dal;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using CwkSocial.Application.Enums;
-using CwkSocial.Application.Models;
-using CwkSocial.Application.UserProfiles.Models;
+using Social.Application.Enums;
+using Social.Application.Models;
+using Social.Application.UserProfiles.Models;
 
-namespace CwkSocial.Application.UserProfiles.QueryHandlers
+namespace Social.Application.UserProfiles.QueryHandlers
 {
     internal class GetUserProfileByIdHandler 
         : IRequestHandler<GetUserProfileById, OperationResult<UserProfileDto>>

@@ -1,4 +1,4 @@
-﻿namespace CwkSocial.Application.Posts;
+﻿namespace Social.Application.Posts;
 
 public class PostsErrorMessages
 {

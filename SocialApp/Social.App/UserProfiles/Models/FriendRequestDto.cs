@@ -1,7 +1,7 @@
 using Cwk.Domain.Aggregates.Friendships;
 using MediatR.Wrappers;
 
-namespace CwkSocial.Application.UserProfiles.Models;
+namespace Social.Application.UserProfiles.Models;
 
 public class FriendRequestDto
 {

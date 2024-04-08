@@ -1,14 +1,14 @@
-﻿using CwkSocial.Application.Enums;
-using CwkSocial.Application.Identity.Commands;
-using CwkSocial.Application.Identity.Dtos;
-using CwkSocial.Application.Models;
-using CwkSocial.Application.Services;
+﻿using Social.Application.Enums;
+using Social.Application.Identity.Commands;
+using Social.Application.Identity.Dtos;
+using Social.Application.Models;
+using Social.Application.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-namespace CwkSocial.Application.Identity.Handlers;
+namespace Social.Application.Identity.Handlers;
 
 public class LoginCommandHandler : IRequestHandler<LoginCommand, OperationResult<IdentityUserProfileDto>>
 {

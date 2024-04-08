@@ -1,9 +1,9 @@
-﻿using CwkSocial.Application.Models;
-using CwkSocial.Application.Posts.Queries;
+﻿using Social.Application.Models;
+using Social.Application.Posts.Queries;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 
-namespace CwkSocial.Application.Posts.QueryHandlers;
+namespace Social.Application.Posts.QueryHandlers;
 
 public class GetAllPostsHandler : IRequestHandler<GetAllPosts, OperationResult<List<Post>>>
 {

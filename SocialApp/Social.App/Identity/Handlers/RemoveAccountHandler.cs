@@ -1,11 +1,11 @@
-﻿using CwkSocial.Application.Enums;
-using CwkSocial.Application.Identity.Commands;
-using CwkSocial.Application.Models;
-using CwkSocial.Application.UserProfiles;
+﻿using Social.Application.Enums;
+using Social.Application.Identity.Commands;
+using Social.Application.Models;
+using Social.Application.UserProfiles;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 
-namespace CwkSocial.Application.Identity.Handlers;
+namespace Social.Application.Identity.Handlers;
 
 public class RemoveAccountHandler : IRequestHandler<RemoveAccount, OperationResult<bool>>
 {

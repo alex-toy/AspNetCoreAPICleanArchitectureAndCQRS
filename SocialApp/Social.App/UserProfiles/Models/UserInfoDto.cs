@@ -1,6 +1,6 @@
 using Cwk.Domain.Aggregates.UserProfileAggregate;
 
-namespace CwkSocial.Application.UserProfiles.Models;
+namespace Social.Application.UserProfiles.Models;
 
 public class UserInfoDto
 {

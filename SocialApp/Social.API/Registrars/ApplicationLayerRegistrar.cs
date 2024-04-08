@@ -1,6 +1,6 @@
-﻿using CwkSocial.Application.Services;
+﻿using Social.Application.Services;
 
-namespace CwkSocial.Api.Registrars;
+namespace Social.Api.Registrars;
 
 public class ApplicationLayerRegistrar : IWebApplicationBuilderRegistrar
 {

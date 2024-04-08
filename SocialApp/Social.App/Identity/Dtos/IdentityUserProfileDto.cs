@@ -1,4 +1,4 @@
-﻿namespace CwkSocial.Application.Identity.Dtos;
+﻿namespace Social.Application.Identity.Dtos;
 
 public class IdentityUserProfileDto
 {

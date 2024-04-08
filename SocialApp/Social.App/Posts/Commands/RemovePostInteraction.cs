@@ -1,8 +1,8 @@
 ﻿using Cwk.Domain.Aggregates.PostAggregate;
-using CwkSocial.Application.Models;
+using Social.Application.Models;
 using MediatR;
 
-namespace CwkSocial.Application.Posts.Commands;
+namespace Social.Application.Posts.Commands;
 
 public class RemovePostInteraction : IRequest<OperationResult<PostInteraction>>
 {

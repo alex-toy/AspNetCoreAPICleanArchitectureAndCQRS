@@ -1,7 +1,7 @@
 using Cwk.Domain.Aggregates.Friendships;
 using Cwk.Domain.Aggregates.UserProfileAggregate;
 
-namespace CwkSocial.Application.UserProfiles.Models;
+namespace Social.Application.UserProfiles.Models;
 
 public class UserProfileDto
 {

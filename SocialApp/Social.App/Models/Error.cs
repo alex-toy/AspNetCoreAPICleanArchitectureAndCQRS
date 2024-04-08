@@ -1,6 +1,6 @@
-﻿using CwkSocial.Application.Enums;
+﻿using Social.Application.Enums;
 
-namespace CwkSocial.Application.Models;
+namespace Social.Application.Models;
 
 public class Error
 {

@@ -1,12 +1,12 @@
-﻿using CwkSocial.Application.Enums;
-using CwkSocial.Application.Models;
-using CwkSocial.Application.Posts.Commands;
+﻿using Social.Application.Enums;
+using Social.Application.Models;
+using Social.Application.Posts.Commands;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using Social.Domain.Aggregates.PostAggregate;
 using Social.Domain.Exceptions;
 
-namespace CwkSocial.Application.Posts.CommandHandlers;
+namespace Social.Application.Posts.CommandHandlers;
 
 public class UpdatePostTextHandler : IRequestHandler<UpdatePostText, OperationResult<Post>>
 {

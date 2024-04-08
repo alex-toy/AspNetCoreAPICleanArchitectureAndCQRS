@@ -1,4 +1,4 @@
-﻿namespace CwkSocial.Application.Enums;
+﻿namespace Social.Application.Enums;
 
 public enum ErrorCode
 {

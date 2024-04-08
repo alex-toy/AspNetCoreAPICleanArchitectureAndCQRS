@@ -1,12 +1,12 @@
 ﻿using Cwk.Domain.Exceptions;
-using CwkSocial.Application.Enums;
-using CwkSocial.Application.Models;
-using CwkSocial.Application.UserProfiles.Commands;
+using Social.Application.Enums;
+using Social.Application.Models;
+using Social.Application.UserProfiles.Commands;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using Social.Domain.Aggregates.UserProfileAggregate;
 
-namespace CwkSocial.Application.UserProfiles.CommandHandlers
+namespace Social.Application.UserProfiles.CommandHandlers
 {
     internal class UpdateUserProfileBasicInfoHandler : IRequestHandler<UpdateUserProfileBasicInfo, OperationResult<UserProfile>>
     {

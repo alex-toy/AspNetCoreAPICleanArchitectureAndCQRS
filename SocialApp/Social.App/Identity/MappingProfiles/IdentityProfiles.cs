@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Cwk.Domain.Aggregates.UserProfileAggregate;
-using CwkSocial.Application.Identity.Dtos;
+using Social.Application.Identity.Dtos;
 
-namespace CwkSocial.Application.Identity.MappingProfiles;
+namespace Social.Application.Identity.MappingProfiles;
 
 public class IdentityProfiles : Profile
 {
