@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Social.Domain.Aggregates.UserProfileAggregate;
 
-namespace Cwk.Domain.Validators.UserProfileValidators;
+namespace Social.Domain.Validators.UserProfileValidators;
 
 public class BasicInfoValidator : AbstractValidator<BasicInfo>
 {
@@ -18,8 +18,8 @@ public class BasicInfoValidator : AbstractValidator<BasicInfo>
         RuleFor(info => info.EmailAddress)
             .NotNull().WithMessage("Email address is required")
             .EmailAddress().WithMessage("Provided string is not a correct email address format");
-        RuleFor( info => info.DateOfBirth)
-            .InclusiveBetween(new DateTime(DateTime.Now.AddYears(-125).Ticks), 
+        RuleFor(info => info.DateOfBirth)
+            .InclusiveBetween(new DateTime(DateTime.Now.AddYears(-125).Ticks),
                 new DateTime(DateTime.Now.AddYears(-18).Ticks))
             .WithMessage("Age needs to be between 18 and 125");
     }

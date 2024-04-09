@@ -1,5 +1,4 @@
-﻿using Cwk.Domain.Exceptions;
-using Social.Application.Enums;
+﻿using Social.Application.Enums;
 using Social.Application.Identity.Commands;
 using Social.Application.Identity.Dtos;
 using Social.Application.Models;
@@ -10,6 +9,9 @@ using Microsoft.IdentityModel.JsonWebTokens;
 using Social.Dal;
 using Social.Domain.Aggregates.UserProfileAggregate;
 using System.Security.Claims;
+using Social.Domain.Exceptions;
+using MediatR;
+using AutoMapper;
 
 namespace Social.Application.Identity.Handlers;
 
@@ -71,7 +73,6 @@ public class RegisterIdentityHandler : IRequestHandler<RegisterIdentity, Operati
 
         if (existingIdentity != null) 
             _result.AddError(ErrorCode.IdentityUserAlreadyExists, IdentityErrorMessages.IdentityUserAlreadyExists);
-        
     }
 
     private async Task<IdentityUser> CreateIdentityUserAsync(RegisterIdentity request, 

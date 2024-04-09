@@ -1,4 +1,7 @@
-﻿namespace Social.Domain.Aggregates.UserProfileAggregate;
+﻿using Social.Domain.Exceptions;
+using Social.Domain.Validators.UserProfileValidators;
+
+namespace Social.Domain.Aggregates.UserProfileAggregate;
 
 public class BasicInfo
 {

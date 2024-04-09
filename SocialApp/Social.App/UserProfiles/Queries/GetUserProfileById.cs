@@ -1,5 +1,4 @@
-﻿using Cwk.Domain.Aggregates.UserProfileAggregate;
-using Social.Application.Models;
+﻿using Social.Application.Models;
 using Social.Application.UserProfiles.Models;
 using MediatR;
 

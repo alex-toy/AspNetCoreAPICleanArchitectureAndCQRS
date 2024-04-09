@@ -1,4 +1,4 @@
-using Cwk.Domain.Aggregates.UserProfileAggregate;
+using Social.Domain.Aggregates.UserProfileAggregate;
 
 namespace Social.Application.UserProfiles.Models;
 

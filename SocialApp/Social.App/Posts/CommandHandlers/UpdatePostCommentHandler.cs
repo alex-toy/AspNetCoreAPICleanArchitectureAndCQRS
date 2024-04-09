@@ -4,11 +4,11 @@ using Social.Application.Posts.Commands;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using Social.Domain.Aggregates.PostAggregate;
+using MediatR;
 
 namespace Social.Application.Posts.CommandHandlers;
 
-public class UpdatePostCommentHandler 
-    : IRequestHandler<UpdatePostComment, OperationResult<PostComment>>
+public class UpdatePostCommentHandler : IRequestHandler<UpdatePostComment, OperationResult<PostComment>>
 {
     private readonly DataContext _ctx;
     private readonly OperationResult<PostComment> _result;

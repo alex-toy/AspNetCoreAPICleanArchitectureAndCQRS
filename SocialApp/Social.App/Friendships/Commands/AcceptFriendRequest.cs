@@ -2,6 +2,7 @@ using Social.Application.Enums;
 using Social.Application.Models;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
+using MediatR;
 
 namespace Social.Application.Friendships.Commands;
 

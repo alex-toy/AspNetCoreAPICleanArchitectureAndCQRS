@@ -1,5 +1,6 @@
-using Cwk.Domain.Exceptions;
+using FluentValidation.Results;
 using Social.Domain.Aggregates.Friendships;
+using Social.Domain.Exceptions;
 
 namespace Social.Domain.Validators.FriendshipsValidators;
 

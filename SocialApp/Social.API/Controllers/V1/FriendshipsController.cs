@@ -1,13 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
+using Social.API.Contracts.Friendships.Requests;
+using Social.Application.Friendships.Commands;
 
 namespace Social.API.Controllers.V1;
 
-[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+//[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 public class FriendshipsController : BaseController
 {
     [HttpPost]
     [Route(ApiRoutes.Friendships.FriendRequestCreate)]
-    [ValidateModel]
+    //[ValidateModel]
     public async Task<IActionResult> SendFriendRequest(FriendRequestCreate friendRequestCreate,
         CancellationToken token)
     {
@@ -23,7 +25,7 @@ public class FriendshipsController : BaseController
 
     [HttpPost]
     [Route(ApiRoutes.Friendships.FriendRequestAccept)]
-    [ValidateGuid("friendRequestId")]
+    //[ValidateGuid("friendRequestId")]
     public async Task<IActionResult> AcceptFriendRequest(Guid friendRequestId, CancellationToken token)
     {
         var actionPerformedBy = HttpContext.GetUserProfileIdClaimValue();
@@ -39,7 +41,7 @@ public class FriendshipsController : BaseController
 
     [HttpPost]
     [Route(ApiRoutes.Friendships.FriendRequestReject)]
-    [ValidateGuid("friendRequestId")]
+    //[ValidateGuid("friendRequestId")]
     public async Task<IActionResult> RejectFriendRequest(Guid friendRequestId, CancellationToken token)
     {
         var actionPerformedBy = HttpContext.GetUserProfileIdClaimValue();

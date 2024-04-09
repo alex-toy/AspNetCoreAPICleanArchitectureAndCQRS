@@ -1,10 +1,11 @@
-﻿using Cwk.Domain.Exceptions;
-using Social.Application.Enums;
+﻿using Social.Application.Enums;
 using Social.Application.Models;
 using Social.Application.UserProfiles.Commands;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using Social.Domain.Aggregates.UserProfileAggregate;
+using Social.Domain.Exceptions;
+using MediatR;
 
 namespace Social.Application.UserProfiles.CommandHandlers
 {

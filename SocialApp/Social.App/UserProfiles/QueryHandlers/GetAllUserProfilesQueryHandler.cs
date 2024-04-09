@@ -2,11 +2,12 @@
 using Social.Application.UserProfiles.Queries;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
+using Social.Domain.Aggregates.UserProfileAggregate;
+using MediatR;
 
 namespace Social.Application.UserProfiles.QueryHandlers
 {
-    internal class GetAllUserProfilesQueryHandler 
-        : IRequestHandler<GetAllUserProfiles, OperationResult<IEnumerable<UserProfile>>>
+    internal class GetAllUserProfilesQueryHandler : IRequestHandler<GetAllUserProfiles, OperationResult<IEnumerable<UserProfile>>>
     {
         private readonly DataContext _ctx;
         public GetAllUserProfilesQueryHandler(DataContext ctx)

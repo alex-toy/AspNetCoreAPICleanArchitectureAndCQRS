@@ -1,4 +1,5 @@
-﻿using Social.Domain.Aggregates.PostAggregate;
+﻿using FluentValidation;
+using Social.Domain.Aggregates.PostAggregate;
 
 namespace Social.Domain.Validators.PostValidators;
 

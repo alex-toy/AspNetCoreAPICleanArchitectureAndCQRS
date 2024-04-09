@@ -4,6 +4,7 @@ using Social.Application.Posts.Commands;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using Social.Domain.Aggregates.PostAggregate;
+using MediatR;
 
 namespace Social.Application.Posts.CommandHandlers;
 

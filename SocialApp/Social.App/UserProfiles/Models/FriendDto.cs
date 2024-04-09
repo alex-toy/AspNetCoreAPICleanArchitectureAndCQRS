@@ -1,4 +1,4 @@
-using Cwk.Domain.Aggregates.Friendships;
+using Social.Domain.Aggregates.Friendships;
 
 namespace Social.Application.UserProfiles.Models;
 

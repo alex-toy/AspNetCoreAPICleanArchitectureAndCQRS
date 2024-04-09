@@ -1,5 +1,4 @@
-﻿using Cwk.Domain.Aggregates.UserProfileAggregate;
-using Social.Application.UserProfiles.Queries;
+﻿using Social.Application.UserProfiles.Queries;
 using Social.Dal;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -9,8 +8,7 @@ using Social.Application.UserProfiles.Models;
 
 namespace Social.Application.UserProfiles.QueryHandlers
 {
-    internal class GetUserProfileByIdHandler 
-        : IRequestHandler<GetUserProfileById, OperationResult<UserProfileDto>>
+    internal class GetUserProfileByIdHandler : IRequestHandler<GetUserProfileById, OperationResult<UserProfileDto>>
     {
         private readonly DataContext _ctx;
 

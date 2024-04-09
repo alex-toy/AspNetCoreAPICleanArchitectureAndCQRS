@@ -1,6 +1,6 @@
-﻿using Cwk.Domain.Aggregates.PostAggregate;
-using Social.Application.Models;
+﻿using Social.Application.Models;
 using MediatR;
+using Social.Domain.Aggregates.PostAggregate;
 
 namespace Social.Application.Posts.Commands;
 

@@ -1,6 +1,6 @@
-﻿using Cwk.Domain.Aggregates.UserProfileAggregate;
-using Social.Application.Models;
+﻿using Social.Application.Models;
 using MediatR;
+using Social.Domain.Aggregates.UserProfileAggregate;
 
 
 namespace Social.Application.UserProfiles.Queries

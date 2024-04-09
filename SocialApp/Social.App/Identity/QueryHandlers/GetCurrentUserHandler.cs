@@ -4,6 +4,8 @@ using Social.Application.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
+using MediatR;
+using AutoMapper;
 
 namespace Social.Application.Identity.QueryHandlers;
 

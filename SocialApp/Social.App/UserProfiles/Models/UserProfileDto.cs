@@ -1,5 +1,5 @@
-using Cwk.Domain.Aggregates.Friendships;
-using Cwk.Domain.Aggregates.UserProfileAggregate;
+using Social.Domain.Aggregates.Friendships;
+using Social.Domain.Aggregates.UserProfileAggregate;
 
 namespace Social.Application.UserProfiles.Models;
 
@@ -15,10 +15,8 @@ public class UserProfileDto
     {
         var userProfileDto = new UserProfileDto { UserProfileId = profile.UserProfileId};
         userProfileDto.UserInfo = UserInfoDto.FromBasicInfo(profile.BasicInfo);
-        friendRequests.ForEach(fr 
-            => userProfileDto.FriendRequests.Add(FriendRequestDto.FromFriendRequest(fr)));
-        friendships.ForEach(f 
-            => userProfileDto.Friends.Add(FriendDto.FromFriendship(f, userProfileDto.UserProfileId)));
+        friendRequests.ForEach(fr => userProfileDto.FriendRequests.Add(FriendRequestDto.FromFriendRequest(fr)));
+        friendships.ForEach(f => userProfileDto.Friends.Add(FriendDto.FromFriendship(f, userProfileDto.UserProfileId)));
 
         return userProfileDto;
     }

@@ -1,7 +1,9 @@
-using Cwk.Domain.Exceptions;
+using MediatR;
 using Social.Application.Enums;
 using Social.Application.Models;
 using Social.Dal;
+using Social.Domain.Aggregates.Friendships;
+using Social.Domain.Exceptions;
 
 namespace Social.Application.Friendships.Commands;
 
@@ -13,12 +15,12 @@ public class CreateFriendRequest : IRequest<OperationResult<Unit>>
 
 public class CreateFriendRequestHandler : IRequestHandler<CreateFriendRequest, OperationResult<Unit>>
 {
-    private readonly DataContext _ctx;
+    private readonly DataContext _context;
     private readonly OperationResult<Unit> _result = new();
 
     public CreateFriendRequestHandler(DataContext ctx)
     {
-        _ctx = ctx;
+        _context = ctx;
     }
     public async Task<OperationResult<Unit>> Handle(CreateFriendRequest request, 
         CancellationToken cancellationToken)
@@ -26,8 +28,8 @@ public class CreateFriendRequestHandler : IRequestHandler<CreateFriendRequest, O
         try
         {
             var friendRequest = FriendRequest.CreateFriendRequest(Guid.NewGuid(), request.RequesterId, request.ReceiverId, DateTime.UtcNow);
-            _ctx.FriendRequests.Add(friendRequest);
-            await _ctx.SaveChangesAsync(cancellationToken);
+            _context.FriendRequests.Add(friendRequest);
+            await _context.SaveChangesAsync(cancellationToken);
         }
         catch (FriendRequestValidationException ex)
         {

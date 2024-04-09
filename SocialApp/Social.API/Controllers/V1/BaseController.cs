@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Social.API.Contracts.Common;
+using Social.Application.Enums;
+using Social.Application.Models;
 
 namespace Social.API.Controllers.V1;
 

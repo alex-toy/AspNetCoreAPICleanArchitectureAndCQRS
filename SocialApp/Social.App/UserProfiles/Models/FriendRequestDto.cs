@@ -1,5 +1,4 @@
-using Cwk.Domain.Aggregates.Friendships;
-using MediatR.Wrappers;
+using Social.Domain.Aggregates.Friendships;
 
 namespace Social.Application.UserProfiles.Models;
 

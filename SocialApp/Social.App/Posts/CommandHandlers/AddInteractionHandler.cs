@@ -1,4 +1,5 @@
-﻿using Social.Application.Enums;
+﻿using MediatR;
+using Social.Application.Enums;
 using Social.Application.Models;
 using Social.Application.Posts;
 using Social.Application.Posts.Commands;

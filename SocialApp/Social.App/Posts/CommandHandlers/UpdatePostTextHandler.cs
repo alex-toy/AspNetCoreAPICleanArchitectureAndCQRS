@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using Social.Domain.Aggregates.PostAggregate;
 using Social.Domain.Exceptions;
+using MediatR;
 
 namespace Social.Application.Posts.CommandHandlers;
 

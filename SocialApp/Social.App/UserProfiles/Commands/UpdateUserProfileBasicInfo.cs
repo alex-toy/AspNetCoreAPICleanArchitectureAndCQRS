@@ -1,11 +1,6 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Cwk.Domain.Aggregates.UserProfileAggregate;
 using Social.Application.Models;
+using Social.Domain.Aggregates.UserProfileAggregate;
 
 namespace Social.Application.UserProfiles.Commands
 {

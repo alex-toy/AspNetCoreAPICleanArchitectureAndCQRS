@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using Social.Domain.Aggregates.UserProfileAggregate;
+using MediatR;
+using AutoMapper;
 namespace Social.Application.Identity.Handlers;
 
 public class LoginCommandHandler : IRequestHandler<LoginCommand, OperationResult<IdentityUserProfileDto>>

@@ -1,6 +1,4 @@
-﻿using Cwk.Domain.Exceptions;
-
-namespace Social.Domain.Exceptions;
+﻿namespace Social.Domain.Exceptions;
 
 public class PostCommentNotValidException : DomainModelInvalidException
 {

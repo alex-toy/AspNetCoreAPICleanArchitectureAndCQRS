@@ -4,6 +4,7 @@ using Social.Application.Posts.Queries;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
 using Social.Domain.Aggregates.PostAggregate;
+using MediatR;
 
 namespace Social.Application.Posts.QueryHandlers;
 

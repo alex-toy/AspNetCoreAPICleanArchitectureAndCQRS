@@ -4,6 +4,7 @@ using Social.Application.Models;
 using Social.Application.UserProfiles;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal;
+using MediatR;
 
 namespace Social.Application.Identity.Handlers;
 
