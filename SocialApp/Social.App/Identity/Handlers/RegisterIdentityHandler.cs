@@ -92,14 +92,11 @@ public class RegisterIdentityHandler : IRequestHandler<RegisterIdentity, Operati
         return identity;
     }
 
-    private async Task<UserProfile> CreateUserProfileAsync(RegisterIdentity request, 
-        IDbContextTransaction transaction, IdentityUser identity,
-        CancellationToken cancellationToken)
+    private async Task<UserProfile> CreateUserProfileAsync(RegisterIdentity request, IDbContextTransaction transaction, IdentityUser identity, CancellationToken cancellationToken)
     {
         try
         {
-            var profileInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.Username,
-                request.Phone, request.DateOfBirth, request.CurrentCity);
+            BasicInfo profileInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.Username, request.Phone, request.DateOfBirth, request.CurrentCity);
 
             var profile = UserProfile.CreateUserProfile(identity.Id, profileInfo);
             _ctx.UserProfiles.Add(profile);

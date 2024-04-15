@@ -1,6 +1,6 @@
 ﻿using Social.Application.UserProfiles.Models;
 
-namespace CwkSocial.Api.Contracts.UserProfile.Responses
+namespace Social.API.Contracts.UserProfile.Responses
 {
     public record BasicInformation
     {

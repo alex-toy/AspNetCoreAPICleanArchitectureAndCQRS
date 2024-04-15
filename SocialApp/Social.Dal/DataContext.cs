@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Social.Dal.Configurations;
+using Social.Domain.Aggregates.Friendships;
 using Social.Domain.Aggregates.PostAggregate;
 using Social.Domain.Aggregates.UserProfileAggregate;
 
@@ -12,8 +13,10 @@ public class DataContext : IdentityDbContext
     {
     }
 
-    public DbSet<UserProfile> userProfiles { get; set; }
+    public DbSet<UserProfile> UserProfiles { get; set; }
     public DbSet<Post> Posts { get; set; }
+    public DbSet<FriendRequest> FriendRequests { get; set; }
+    public DbSet<Friendship> Friendships { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -11,36 +11,33 @@ namespace Social.Application.UserProfiles.CommandHandlers
 {
     internal class UpdateUserProfileBasicInfoHandler : IRequestHandler<UpdateUserProfileBasicInfo, OperationResult<UserProfile>>
     {
-        private readonly DataContext _ctx;
+        private readonly DataContext _context;
 
         public UpdateUserProfileBasicInfoHandler(DataContext ctx)
         {
-            _ctx = ctx;
+            _context = ctx;
         }
-        public async Task<OperationResult<UserProfile>> Handle(UpdateUserProfileBasicInfo request, 
-            CancellationToken cancellationToken)
+
+        public async Task<OperationResult<UserProfile>> Handle(UpdateUserProfileBasicInfo request, CancellationToken cancellationToken)
         {
             var result = new OperationResult<UserProfile>();
 
             try
             {
-                var userProfile = await _ctx.UserProfiles
-                    .FirstOrDefaultAsync(up => up.UserProfileId == request.UserProfileId, cancellationToken: cancellationToken);
+                var userProfile = await _context.UserProfiles.FirstOrDefaultAsync(up => up.UserProfileId == request.UserProfileId, cancellationToken: cancellationToken);
 
                 if (userProfile is null)
                 {
-                    result.AddError(ErrorCode.NotFound,
-                        string.Format(UserProfilesErrorMessages.UserProfileNotFound, request.UserProfileId));
+                    result.AddError(ErrorCode.NotFound, string.Format(UserProfilesErrorMessages.UserProfileNotFound, request.UserProfileId));
                     return result;
                 }
 
-                var basicInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName,
-                    request.EmailAddress, request.Phone, request.DateOfBirth, request.CurrentCity);
+                var basicInfo = BasicInfo.CreateBasicInfo(request.FirstName, request.LastName, request.EmailAddress, request.Phone, request.DateOfBirth, request.CurrentCity);
 
                 userProfile.UpdateBasicInfo(basicInfo);
 
-                _ctx.UserProfiles.Update(userProfile);
-                await _ctx.SaveChangesAsync(cancellationToken);
+                _context.UserProfiles.Update(userProfile);
+                await _context.SaveChangesAsync(cancellationToken);
                 
                 result.Payload = userProfile;
                 return result;

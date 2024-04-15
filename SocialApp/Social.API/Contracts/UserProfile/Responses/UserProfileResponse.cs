@@ -1,5 +1,4 @@
-﻿using CwkSocial.Api.Contracts.UserProfile.Responses;
-using Social.Application.UserProfiles.Models;
+﻿using Social.Application.UserProfiles.Models;
 
 namespace Social.API.Contracts.UserProfile.Responses;
 

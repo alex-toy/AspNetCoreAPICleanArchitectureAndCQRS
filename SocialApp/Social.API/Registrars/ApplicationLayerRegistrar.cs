@@ -1,6 +1,7 @@
-﻿using Social.Application.Services;
+﻿using Social.API.Registrars;
+using Social.Application.Services;
 
-namespace Social.Api.Registrars;
+namespace Social.API.Registrars;
 
 public class ApplicationLayerRegistrar : IWebApplicationBuilderRegistrar
 {

@@ -1,4 +1,4 @@
-﻿namespace CwkSocial.Api.Contracts.Posts.Responses;
+﻿namespace Social.API.Contracts.Posts.Responses;
 
 public class PostInteraction
 {

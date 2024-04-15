@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Social.Application.Identity.Dtos;
+using Social.Application.UserProfiles.Commands;
 using Social.Domain.Aggregates.UserProfileAggregate;
 
 namespace Social.Application.Identity.MappingProfiles;

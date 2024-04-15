@@ -1,7 +1,12 @@
 ﻿
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using Social.API.Registrars;
+using Social.Application.Options;
+using System.Text;
 
-namespace Social.Api.Registrars;
+namespace Social.API.Registrars;
 
 public class IdentityRegistrar : IWebApplicationBuilderRegistrar
 {

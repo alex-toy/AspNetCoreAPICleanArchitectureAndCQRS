@@ -1,4 +1,4 @@
-﻿namespace CwkSocial.Api.Contracts.Identity;
+﻿namespace Social.API.Contracts.Identity;
 
 public class IdentityUserProfile
 {

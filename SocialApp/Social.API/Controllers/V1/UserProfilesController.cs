@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Social.API.Contracts.UserProfile.Requests;
 using Social.API.Contracts.UserProfile.Responses;
+using Social.Application.Models;
 using Social.Application.UserProfiles.Commands;
+using Social.Application.UserProfiles.Models;
 using Social.Application.UserProfiles.Queries;
+using Social.Domain.Aggregates.UserProfileAggregate;
 
 namespace Social.API.Controllers.V1;
 
@@ -19,31 +22,30 @@ public class UserProfilesController : BaseController
         return Ok(profiles);
     }
 
-    //[Route(ApiRoutes.UserProfiles.IdRoute)]
-    //[HttpGet]
-    ////[ValidateGuid("id")]
-    //public async Task<IActionResult> GetUserProfileById(string id, CancellationToken cancellationToken)
-    //{
-    //    var query = new GetUserProfileById { UserProfileId = Guid.Parse(id) };
-    //    var response = await _mediator.Send(query, cancellationToken);
+    [Route(ApiRoutes.UserProfiles.IdRoute)]
+    [HttpGet]
+    //[ValidateGuid("id")]
+    public async Task<IActionResult> GetUserProfileById(string id, CancellationToken cancellationToken)
+    {
+        var query = new GetUserProfileById { UserProfileId = Guid.Parse(id) };
+        OperationResult<UserProfileDto> response = await _mediator.Send(query, cancellationToken);
 
-    //    if (response.IsError)
-    //        return HandleErrorResponse(response.Errors);
+        if (response.IsError) return HandleErrorResponse(response.Errors);
 
-    //    var userProfile = UserProfileResponse.FromUserProfileDto(response.Payload);
-    //    return Ok(userProfile);
-    //}
+        UserProfileResponse userProfile = UserProfileResponse.FromUserProfileDto(response.Payload);
+        return Ok(userProfile);
+    }
 
-    //[HttpPatch]
-    //[Route(ApiRoutes.UserProfiles.IdRoute)]
-    ////[ValidateModel]
-    ////[ValidateGuid("id")]
-    //public async Task<IActionResult> UpdateUserProfile(string id, UserProfileCreateUpdate updatedProfile, CancellationToken cancellationToken)
-    //{
-    //    var command = _mapper.Map<UpdateUserProfileBasicInfo>(updatedProfile);
-    //    command.UserProfileId = Guid.Parse(id);
-    //    var response = await _mediator.Send(command, cancellationToken);
+    [HttpPatch]
+    [Route(ApiRoutes.UserProfiles.IdRoute)]
+    //[ValidateModel]
+    //[ValidateGuid("id")]
+    public async Task<IActionResult> UpdateUserProfile(string id, UserProfileCreateUpdate updatedProfile, CancellationToken cancellationToken)
+    {
+        UpdateUserProfileBasicInfo command = _mapper.Map<UpdateUserProfileBasicInfo>(updatedProfile);
+        command.UserProfileId = Guid.Parse(id);
+        OperationResult<UserProfile> response = await _mediator.Send(command, cancellationToken);
 
-    //    return response.IsError ? HandleErrorResponse(response.Errors) : NoContent();
-    //}
+        return response.IsError ? HandleErrorResponse(response.Errors) : NoContent();
+    }
 }

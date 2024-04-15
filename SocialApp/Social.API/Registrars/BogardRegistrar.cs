@@ -1,7 +1,8 @@
 ﻿using Social.Application.UserProfiles.Queries;
 using Social.API.Registrars;
+using MediatR;
 
-namespace Social.Api.Registrars
+namespace Social.API.Registrars
 {
     public class BogardRegistrar : IWebApplicationBuilderRegistrar
     {

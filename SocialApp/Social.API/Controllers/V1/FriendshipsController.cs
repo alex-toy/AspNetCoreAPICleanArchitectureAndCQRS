@@ -28,11 +28,11 @@ public class FriendshipsController : BaseController
     //[ValidateGuid("friendRequestId")]
     public async Task<IActionResult> AcceptFriendRequest(Guid friendRequestId, CancellationToken token)
     {
-        var actionPerformedBy = HttpContext.GetUserProfileIdClaimValue();
+        //var actionPerformedBy = HttpContext.GetUserProfileIdClaimValue();
         var command = new AcceptFriendRequest
         {
             FriendRequestId = friendRequestId,
-            ActionPerformedById = actionPerformedBy
+            //ActionPerformedById = actionPerformedBy
         };
         var result = await _mediator.Send(command, token);
         if (result.IsError) return HandleErrorResponse(result.Errors);
@@ -44,11 +44,11 @@ public class FriendshipsController : BaseController
     //[ValidateGuid("friendRequestId")]
     public async Task<IActionResult> RejectFriendRequest(Guid friendRequestId, CancellationToken token)
     {
-        var actionPerformedBy = HttpContext.GetUserProfileIdClaimValue();
+        //var actionPerformedBy = HttpContext.GetUserProfileIdClaimValue();
         var command = new RejectFriendRequest
         {
             FriendRequestId = friendRequestId,
-            ActionPerformedById = actionPerformedBy
+            //ActionPerformedById = actionPerformedBy
         };
         var result = await _mediator.Send(command, token);
         if (result.IsError) return HandleErrorResponse(result.Errors);

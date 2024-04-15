@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Social.Application.Enums;
 using Social.Application.Models;
 using Social.Application.Posts;

@@ -9,17 +9,17 @@ namespace Social.Application.UserProfiles.QueryHandlers
 {
     internal class GetAllUserProfilesQueryHandler : IRequestHandler<GetAllUserProfiles, OperationResult<IEnumerable<UserProfile>>>
     {
-        private readonly DataContext _ctx;
+        private readonly DataContext _context;
+
         public GetAllUserProfilesQueryHandler(DataContext ctx)
         {
-            _ctx = ctx;
+            _context = ctx;
         }
         
-        public async Task<OperationResult<IEnumerable<UserProfile>>> Handle(GetAllUserProfiles request, 
-            CancellationToken cancellationToken)
+        public async Task<OperationResult<IEnumerable<UserProfile>>> Handle(GetAllUserProfiles request, CancellationToken cancellationToken)
         {
             var result = new OperationResult<IEnumerable<UserProfile>>();
-            result.Payload =  await _ctx.UserProfiles.ToListAsync(cancellationToken: cancellationToken);
+            result.Payload =  await _context.UserProfiles.ToListAsync(cancellationToken);
             return result;
         }
     }
